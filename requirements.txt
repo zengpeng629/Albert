@@ -1,4 +1,4 @@
-SpeechRecongnition
+SpeechRecognition
 pydub
 python-dotenv
 networkx
