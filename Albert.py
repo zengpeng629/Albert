@@ -52,14 +52,10 @@ if st.button('Transcribe Meeting & Generate Meeting Notes') and uploaded_file is
                 model = whisper.load_model("base")
                 transcription = model.transcribe("temp.wav")["text"]
 
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.markdown("**Transcription:**")
-                    st.write(transcription)
-                with col2:
-                    notes = take_notes(transcription)
-                    st.markdown("**Notes:**")
-                    st.write(notes)
+                st.success('Transcription completed! Albert is now generating meeting notes...')
+                notes = take_notes(transcription)
+                st.markdown("**Notes:**")
+                st.write(notes)
                 
             except sr.UnknownValueError:
                 st.warning("Sorry, we couldn't understand the audio. Please try uploading a clearer audio file.")
