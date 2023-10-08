@@ -26,7 +26,7 @@ st.markdown("""
 
 uploaded_file = st.file_uploader("Choose an audio file to get started...", type=["m4a", "wav", "mp3", "flac"])
 
-if st.button('Click here, let Albert work!') and uploaded_file is not None:
+if st.button('Click here, let Albert work!', type="primary") and uploaded_file is not None:
     # Check the file format and convert if necessary
     file_details = uploaded_file.name.split('.')
     file_format = file_details[-1]
