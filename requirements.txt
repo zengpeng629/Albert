@@ -6,3 +6,4 @@ pydot
 openai
 SoundFile
 torch
+whisper
