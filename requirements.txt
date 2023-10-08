@@ -1,0 +1,5 @@
+SpeechRecongnition
+pydub
+python-dotenv
+networkx
+pydot
