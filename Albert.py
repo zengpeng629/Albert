@@ -1,3 +1,4 @@
+import whisper
 import streamlit as st
 import speech_recognition as sr
 from pydub import AudioSegment
@@ -47,8 +48,10 @@ if st.button('Transcribe Meeting & Generate Meeting Notes') and uploaded_file is
                 #     model="medium.en",
                 #     show_dict=True,
                 # )["text"]
-                transcription = r.recognize_google(audio_data, language= 'en-in')
-                
+                # transcription = r.recognize_google(audio_data, language= 'en-in')
+                model = whisper.load_model("base")
+                transcription = model.transcribe("temp.wav")["text"]
+
                 col1, col2 = st.columns(2)
                 with col1:
                     st.markdown("**Transcription:**")
