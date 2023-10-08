@@ -7,5 +7,5 @@ openai
 SoundFile
 torch
 numpy==1.25
-numba
+numba==0.58.0
 git+https://github.com/openai/whisper.git
