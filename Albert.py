@@ -42,11 +42,12 @@ if st.button('Transcribe Meeting & Generate Meeting Notes') and uploaded_file is
         with audio_file as source:
             audio_data = r.record(source)
             try:
-                transcription = r.recognize_whisper(
-                    audio_data,
-                    model="medium.en",
-                    show_dict=True,
-                )["text"]
+                # transcription = r.recognize_whisper(
+                #     audio_data,
+                #     model="medium.en",
+                #     show_dict=True,
+                # )["text"]
+                transcription = r.recognize_google(audio_data, language= 'en-in')
                 
                 col1, col2 = st.columns(2)
                 with col1:
